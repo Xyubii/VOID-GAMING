@@ -32,7 +32,6 @@
                    CSS VARIABLES & THEME SYSTEM
                    ============================================================ */
         :root {
-            /* Dark Mode (default) */
             --bg-primary: #050505;
             --bg-secondary: #0a0a0f;
             --bg-card: rgba(45, 11, 82, 0.35);
@@ -78,9 +77,6 @@
             --step-bg: rgba(0, 212, 255, 0.06);
         }
 
-        /* ============================================================
-                   RESET & BASE
-                   ============================================================ */
         *,
         *::before,
         *::after {
@@ -92,7 +88,6 @@
         html {
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
@@ -130,9 +125,7 @@
             padding: 0 24px;
         }
 
-        /* ============================================================
-                   LOADING SCREEN
-                   ============================================================ */
+        /* LOADER */
         #loader {
             position: fixed;
             inset: 0;
@@ -202,9 +195,7 @@
             }
         }
 
-        /* ============================================================
-                   HEADER / NAVBAR
-                   ============================================================ */
+        /* HEADER */
         header {
             position: fixed;
             top: 0;
@@ -267,7 +258,6 @@
         .nav-links a:hover::after {
             width: 100%;
         }
-
         .nav-actions {
             display: flex;
             align-items: center;
@@ -322,9 +312,7 @@
             transition: var(--transition-smooth);
         }
 
-        /* ============================================================
-                   HERO SECTION
-                   ============================================================ */
+        /* HERO */
         #hero {
             position: relative;
             min-height: 100vh;
@@ -501,9 +489,7 @@
             }
         }
 
-        /* ============================================================
-                   SECTION COMMON
-                   ============================================================ */
+        /* SECTION COMMON */
         section {
             padding: 80px 0;
             position: relative;
@@ -528,9 +514,7 @@
             margin: 0 auto 48px;
         }
 
-        /* ============================================================
-                   GAMES SECTION
-                   ============================================================ */
+        /* GAMES */
         #games {
             background: var(--bg-secondary);
         }
@@ -707,82 +691,7 @@
             box-shadow: 0 0 50px var(--neon-purple-glow);
         }
 
-        /* ============================================================
-                   HOW TO TOP-UP (طريقة الشحن)
-                   ============================================================ */
-        #how-to {
-            background: var(--bg-secondary);
-            padding: 60px 0;
-        }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .step-item {
-            background: var(--bg-glass);
-            backdrop-filter: blur(8px);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius-md);
-            padding: 28px 20px;
-            text-align: center;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-        .step-item::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center, var(--neon-blue-glow) 0%, transparent 60%);
-            opacity: 0;
-            transition: var(--transition-smooth);
-            pointer-events: none;
-        }
-        .step-item:hover::before {
-            opacity: 0.15;
-        }
-        .step-item:hover {
-            transform: translateY(-6px);
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 30px var(--neon-blue-glow);
-        }
-        .step-item .step-number {
-            font-family: var(--font-display);
-            font-size: 2.4rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            opacity: 0.3;
-            position: absolute;
-            top: 8px;
-            right: 16px;
-        }
-        .step-item .step-icon {
-            font-size: 2.4rem;
-            margin-bottom: 12px;
-            color: var(--neon-blue);
-        }
-        .step-item h4 {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 6px;
-            font-family: var(--font-display);
-            letter-spacing: 0.5px;
-        }
-        .step-item p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* ============================================================
-                   WHY CHOOSE US
-                   ============================================================ */
+        /* WHY CHOOSE */
         #why-choose {
             background: var(--bg-primary);
         }
@@ -820,9 +729,7 @@
             color: var(--text-secondary);
         }
 
-        /* ============================================================
-                   TESTIMONIALS
-                   ============================================================ */
+        /* TESTIMONIALS (مع إضافة تقييمات وزر إضافة) */
         #testimonials {
             background: var(--bg-secondary);
         }
@@ -830,6 +737,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 28px;
+            margin-bottom: 40px;
         }
         .testimonial-card {
             background: var(--bg-card);
@@ -864,9 +772,76 @@
             font-size: 0.8rem;
         }
 
-        /* ============================================================
-                   FAQ
-                   ============================================================ */
+        .testimonial-stats {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        .testimonial-stats strong {
+            color: var(--neon-blue);
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+        }
+
+        .add-review-box {
+            background: var(--bg-glass);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-md);
+            padding: 30px 24px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .add-review-box h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: var(--neon-blue);
+        }
+        .add-review-box .form-group {
+            margin-bottom: 12px;
+        }
+        .add-review-box input,
+        .add-review-box textarea,
+        .add-review-box select {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-glass);
+            background: var(--bg-glass);
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(4px);
+        }
+        .add-review-box input:focus,
+        .add-review-box textarea:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px var(--neon-blue-glow);
+        }
+        .add-review-box textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .add-review-box .btn-submit-review {
+            padding: 12px 30px;
+            border-radius: 60px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            color: #fff;
+            transition: var(--transition-smooth);
+            box-shadow: 0 0 30px var(--neon-blue-glow);
+            border: none;
+            width: 100%;
+        }
+        .add-review-box .btn-submit-review:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px var(--neon-purple-glow);
+        }
+
+        /* FAQ */
         #faq {
             background: var(--bg-primary);
         }
@@ -922,9 +897,7 @@
             padding: 0 24px 20px;
         }
 
-        /* ============================================================
-                   CONTACT & PAYMENT SECTION
-                   ============================================================ */
+        /* CONTACT & PAYMENT */
         #contact {
             background: var(--bg-secondary);
         }
@@ -1012,7 +985,6 @@
             color: var(--text-muted);
         }
 
-        /* Payment Instruction Box */
         .payment-instruction {
             background: var(--payment-highlight);
             border: 1px solid var(--neon-blue);
@@ -1039,7 +1011,7 @@
             letter-spacing: 1px;
         }
         .payment-instruction .wallet-number {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 900;
             background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
             -webkit-background-clip: text;
@@ -1047,10 +1019,11 @@
             letter-spacing: 2px;
             margin: 6px 0 10px;
             display: inline-block;
-            border: 1px dashed var(--border-glass);
-            padding: 4px 20px;
+            border: 2px solid var(--neon-blue);
+            padding: 6px 24px;
             border-radius: 60px;
-            background: var(--bg-glass);
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 20px var(--neon-blue-glow);
         }
         .payment-instruction .copy-btn {
             background: var(--bg-glass);
@@ -1104,9 +1077,7 @@
             display: block;
         }
 
-        /* ============================================================
-                   TRUST BADGES
-                   ============================================================ */
+        /* TRUST BADGES */
         #trust-badges {
             padding: 40px 0;
             background: var(--bg-primary);
@@ -1133,9 +1104,7 @@
             color: var(--neon-blue);
         }
 
-        /* ============================================================
-                   ORDER NOTIFICATION (floating)
-                   ============================================================ */
+        /* ORDER NOTIFICATION */
         .order-notification {
             position: fixed;
             bottom: 100px;
@@ -1174,9 +1143,7 @@
             color: var(--neon-blue);
         }
 
-        /* ============================================================
-                   FLOATING BUTTONS
-                   ============================================================ */
+        /* FLOATING BUTTONS */
         .floating-buttons {
             position: fixed;
             bottom: 28px;
@@ -1219,9 +1186,7 @@
             border-color: var(--neon-blue);
         }
 
-        /* ============================================================
-                   FOOTER
-                   ============================================================ */
+        /* FOOTER */
         footer {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border-glass);
@@ -1277,9 +1242,7 @@
             width: 100%;
         }
 
-        /* ============================================================
-                   RTL SUPPORT
-                   ============================================================ */
+        /* RTL */
         [dir="rtl"] .nav-links {
             gap: 28px;
         }
@@ -1311,14 +1274,8 @@
             right: auto;
             left: 16px;
         }
-        [dir="rtl"] .step-item .step-number {
-            right: auto;
-            left: 16px;
-        }
 
-        /* ============================================================
-                   RESPONSIVE
-                   ============================================================ */
+        /* RESPONSIVE */
         @media (max-width: 1024px) {
             #hero .container {
                 grid-template-columns: 1fr;
@@ -1385,10 +1342,11 @@
                 gap: 20px 30px;
             }
             .payment-instruction .wallet-number {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
+                padding: 4px 16px;
             }
-            .steps-grid {
-                grid-template-columns: 1fr 1fr;
+            .testimonial-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1411,14 +1369,8 @@
                 height: 44px;
                 font-size: 1.1rem;
             }
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
-        /* ============================================================
-                   UTILITY ANIMATIONS
-                   ============================================================ */
         .fade-up {
             opacity: 0;
             transform: translateY(40px);
@@ -1429,7 +1381,6 @@
             transform: translateY(0);
         }
 
-        /* Scrollbar */
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -1444,9 +1395,7 @@
 </head>
 <body>
 
-    <!-- ============================================================
-    LOADING SCREEN
-    ============================================================ -->
+    <!-- LOADER -->
     <div id="loader" role="status" aria-label="Loading">
         <div class="loader-logo">VOID GAMING</div>
         <div class="loader-sub">Loading</div>
@@ -1455,25 +1404,20 @@
         </div>
     </div>
 
-    <!-- ============================================================
-    HEADER
-    ============================================================ -->
+    <!-- HEADER -->
     <header id="header" role="banner">
         <div class="container">
             <a href="#" class="nav-logo" aria-label="VOID GAMING Home">
                 <span class="logo-v">V</span>OID GAMING
             </a>
-
             <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
                 <a href="#hero" data-i18n="nav.home">Home</a>
                 <a href="#games" data-i18n="nav.games">Games</a>
-                <a href="#how-to" data-i18n="nav.howto">How to Top-Up</a>
                 <a href="#why-choose" data-i18n="nav.why">Why Us</a>
                 <a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
                 <a href="#faq" data-i18n="nav.faq">FAQ</a>
                 <a href="#contact" data-i18n="nav.contact" style="color:var(--neon-blue);font-weight:700;">⬆️ Top-Up</a>
             </nav>
-
             <div class="nav-actions">
                 <button class="lang-btn" id="langToggle" aria-label="Toggle Language">
                     <i class="fas fa-globe"></i> <span id="langLabel">EN</span>
@@ -1488,9 +1432,7 @@
         </div>
     </header>
 
-    <!-- ============================================================
-    HERO SECTION
-    ============================================================ -->
+    <!-- HERO -->
     <section id="hero" aria-label="Hero">
         <div class="hero-bg-3d" id="threeContainer"></div>
         <div class="hero-overlay"></div>
@@ -1506,7 +1448,7 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#games" class="btn-primary" data-i18n="hero.cta1">
-                        <i class="fas fa-rocket"></i> Explore Games
+                        <i class="fas fa-rocket"></i> شحن الألعاب
                     </a>
                     <a href="#contact" class="btn-secondary" data-i18n="hero.cta2">
                         <i class="fas fa-headset"></i> Contact Us
@@ -1535,9 +1477,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    TRUST BADGES
-    ============================================================ -->
+    <!-- TRUST BADGES -->
     <section id="trust-badges" aria-label="Trust Badges">
         <div class="container">
             <div class="trust-grid">
@@ -1550,125 +1490,103 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    GAMES SECTION
-    ============================================================ -->
+    <!-- GAMES SECTION -->
     <section id="games" aria-label="Games">
         <div class="container">
             <h2 class="section-title">
-                <span data-i18n="games.title">Top-Up</span> <span class="highlight" data-i18n="games.titleHighlight">Games</span>
+                <span data-i18n="games.title">شحن</span> <span class="highlight" data-i18n="games.titleHighlight">الألعاب</span>
             </h2>
             <p class="section-sub" data-i18n="games.sub">
-                Choose your game, pick a package, and level up instantly.
+                اختر لعبتك، اختر الباقة، وارتقِ بمستواك فوراً.
             </p>
-
             <div class="games-controls">
-                <input type="text" id="gameSearch" placeholder="Search games..." data-i18n-placeholder="games.search" />
+                <input type="text" id="gameSearch" placeholder="ابحث عن لعبة..." data-i18n-placeholder="games.search" />
                 <div class="filter-group" id="filterGroup">
-                    <button class="filter-btn active" data-filter="all" data-i18n="games.all">All</button>
-                    <button class="filter-btn" data-filter="battle" data-i18n="games.battle">Battle</button>
-                    <button class="filter-btn" data-filter="rpg" data-i18n="games.rpg">RPG</button>
+                    <button class="filter-btn active" data-filter="all" data-i18n="games.all">الكل</button>
+                    <button class="filter-btn" data-filter="battle" data-i18n="games.battle">قتال</button>
+                    <button class="filter-btn" data-filter="rpg" data-i18n="games.rpg">آر بي جي</button>
                     <button class="filter-btn" data-filter="fps" data-i18n="games.fps">FPS</button>
                     <button class="filter-btn" data-filter="moba" data-i18n="games.moba">MOBA</button>
                 </div>
             </div>
-
             <div class="games-grid" id="gamesGrid">
                 <!-- Rendered by JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    HOW TO TOP-UP SECTION
-    ============================================================ -->
-    <section id="how-to" aria-label="How to Top-Up">
-        <div class="container">
-            <h2 class="section-title">
-                <span data-i18n="how.title">How to</span> <span class="highlight" data-i18n="how.titleHighlight">Top-Up</span>
-            </h2>
-            <p class="section-sub" data-i18n="how.sub">Follow these simple steps to get your gaming credits instantly.</p>
-            <div class="steps-grid">
-                <div class="step-item fade-up">
-                    <div class="step-number">01</div>
-                    <div class="step-icon"><i class="fas fa-gamepad"></i></div>
-                    <h4 data-i18n="how.step1.title">Choose Your Game</h4>
-                    <p data-i18n="how.step1.desc">Browse our list of supported games and select your favorite.</p>
-                </div>
-                <div class="step-item fade-up">
-                    <div class="step-number">02</div>
-                    <div class="step-icon"><i class="fas fa-box"></i></div>
-                    <h4 data-i18n="how.step2.title">Pick a Package</h4>
-                    <p data-i18n="how.step2.desc">Select the amount of credits or diamonds you want to purchase.</p>
-                </div>
-                <div class="step-item fade-up">
-                    <div class="step-number">03</div>
-                    <div class="step-icon"><i class="fas fa-wallet"></i></div>
-                    <h4 data-i18n="how.step3.title">Transfer Payment</h4>
-                    <p data-i18n="how.step3.desc">Send the exact amount to our Vodafone Cash wallet number below.</p>
-                </div>
-                <div class="step-item fade-up">
-                    <div class="step-number">04</div>
-                    <div class="step-icon"><i class="fas fa-upload"></i></div>
-                    <h4 data-i18n="how.step4.title">Submit & Screenshot</h4>
-                    <p data-i18n="how.step4.desc">Fill in your details, upload the transfer screenshot, and submit.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
-    WHY CHOOSE US
-    ============================================================ -->
+    <!-- WHY CHOOSE -->
     <section id="why-choose" aria-label="Why Choose Us">
         <div class="container">
             <h2 class="section-title">
                 <span data-i18n="why.title">Why</span> <span class="highlight" data-i18n="why.titleHighlight">VOID GAMING</span>
             </h2>
-            <p class="section-sub" data-i18n="why.sub">We deliver excellence with speed, security, and style.</p>
+            <p class="section-sub" data-i18n="why.sub">نقدم لك التميز بالسرعة والأمان والأناقة.</p>
             <div class="why-grid">
                 <div class="why-item fade-up">
                     <div class="icon"><i class="fas fa-bolt"></i></div>
-                    <h4 data-i18n="why.fast">Lightning Fast</h4>
-                    <p data-i18n="why.fastDesc">Instant top-ups delivered within minutes.</p>
+                    <h4 data-i18n="why.fast">سرعة البرق</h4>
+                    <p data-i18n="why.fastDesc">شحن فوري خلال دقائق.</p>
                 </div>
                 <div class="why-item fade-up">
                     <div class="icon"><i class="fas fa-lock"></i></div>
-                    <h4 data-i18n="why.secure">Secure &amp; Trusted</h4>
-                    <p data-i18n="why.secureDesc">Your data is protected with enterprise-grade security.</p>
+                    <h4 data-i18n="why.secure">آمن وموثوق</h4>
+                    <p data-i18n="why.secureDesc">بياناتك محمية بأمان على مستوى المؤسسات.</p>
                 </div>
                 <div class="why-item fade-up">
                     <div class="icon"><i class="fas fa-tags"></i></div>
-                    <h4 data-i18n="why.price">Best Prices</h4>
-                    <p data-i18n="why.priceDesc">Competitive rates with no hidden fees.</p>
+                    <h4 data-i18n="why.price">أفضل الأسعار</h4>
+                    <p data-i18n="why.priceDesc">أسعار تنافسية بدون رسوم خفية.</p>
                 </div>
                 <div class="why-item fade-up">
                     <div class="icon"><i class="fas fa-headset"></i></div>
-                    <h4 data-i18n="why.support">24/7 Support</h4>
-                    <p data-i18n="why.supportDesc">Our team is always ready to help you.</p>
+                    <h4 data-i18n="why.support">دعم 24/7</h4>
+                    <p data-i18n="why.supportDesc">فريقنا جاهز دائماً لمساعدتك.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    TESTIMONIALS
-    ============================================================ -->
+    <!-- TESTIMONIALS (مع إضافة تقييمات) -->
     <section id="testimonials" aria-label="Testimonials">
         <div class="container">
             <h2 class="section-title">
-                <span data-i18n="testimonials.title">What Our</span> <span class="highlight" data-i18n="testimonials.titleHighlight">Gamers Say</span>
+                <span data-i18n="testimonials.title">ماذا يقول</span> <span class="highlight" data-i18n="testimonials.titleHighlight">لاعبونا</span>
             </h2>
-            <p class="section-sub" data-i18n="testimonials.sub">Real stories from real players.</p>
+            <p class="section-sub" data-i18n="testimonials.sub">قصص حقيقية من لاعبين حقيقيين.</p>
+            <div class="testimonial-stats">
+                <strong id="reviewCount">100+</strong> تقييم إيجابي من عملائنا الكرام
+            </div>
             <div class="testimonial-grid" id="testimonialGrid">
                 <!-- Rendered by JavaScript -->
+            </div>
+
+            <!-- إضافة تقييم جديد -->
+            <div class="add-review-box">
+                <h4>💬 أضف تقييمك</h4>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <input type="text" id="reviewName" placeholder="اسمك" required />
+                    </div>
+                    <div class="form-group">
+                        <select id="reviewStars" required>
+                            <option value="5">★★★★★ (5 نجوم)</option>
+                            <option value="4">★★★★☆ (4 نجوم)</option>
+                            <option value="3">★★★☆☆ (3 نجوم)</option>
+                            <option value="2">★★☆☆☆ (2 نجوم)</option>
+                            <option value="1">★☆☆☆☆ (1 نجمة)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="reviewText" placeholder="اكتب تقييمك هنا..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit-review">إضافة التقييم</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- ============================================================
-    FAQ
-    ============================================================ -->
+    <!-- FAQ -->
     <section id="faq" aria-label="FAQ">
         <div class="container">
             <h2 class="section-title">
@@ -1681,25 +1599,23 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    CONTACT & PAYMENT SECTION
-    ============================================================ -->
+    <!-- CONTACT & PAYMENT -->
     <section id="contact" aria-label="Contact">
         <div class="container">
             <h2 class="section-title">
                 <span data-i18n="contact.title">Get In</span> <span class="highlight" data-i18n="contact.titleHighlight">Touch</span>
             </h2>
-            <p class="section-sub" data-i18n="contact.sub">We're here to help you level up.</p>
+            <p class="section-sub" data-i18n="contact.sub">نحن هنا لمساعدتك على الارتقاء.</p>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3 data-i18n="contact.reach">Reach Out to Us</h3>
-                    <p data-i18n="contact.reachDesc">Connect with us through any of these channels.</p>
+                    <h3 data-i18n="contact.reach">تواصل معنا</h3>
+                    <p data-i18n="contact.reachDesc">تواصل معنا عبر أي من هذه القنوات.</p>
                     <div class="contact-methods" id="contactMethods">
                         <!-- Rendered by JavaScript -->
                     </div>
                 </div>
                 <div class="contact-form" id="orderForm">
-                    <!-- Payment Instruction Box -->
+                    <!-- Payment Instruction -->
                     <div class="payment-instruction">
                         <h4>💳 طريقة الدفع (فودافون كاش)</h4>
                         <p class="step-hint">قم بتحويل المبلغ المطلوب إلى رقم المحفظة التالي:</p>
@@ -1716,39 +1632,39 @@
 
                     <form id="orderFormElement" novalidate>
                         <div class="form-group">
-                            <label for="orderName" data-i18n="form.name">Your Name</label>
-                            <input type="text" id="orderName" placeholder="Enter your name" required data-i18n-placeholder="form.namePlace" />
+                            <label for="orderName" data-i18n="form.name">اسمك</label>
+                            <input type="text" id="orderName" placeholder="أدخل اسمك" required data-i18n-placeholder="form.namePlace" />
                         </div>
                         <div class="form-group">
-                            <label for="orderGame" data-i18n="form.game">Select Game</label>
+                            <label for="orderGame" data-i18n="form.game">اختر اللعبة</label>
                             <select id="orderGame" required>
                                 <option value="">-- Select --</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="orderPackage" data-i18n="form.package">Select Package</label>
+                            <label for="orderPackage" data-i18n="form.package">اختر الباقة</label>
                             <select id="orderPackage" required>
                                 <option value="">-- Select --</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="orderId" data-i18n="form.gameId">Game ID</label>
-                            <input type="text" id="orderId" placeholder="Enter your Game ID" required data-i18n-placeholder="form.idPlace" />
+                            <label for="orderId" data-i18n="form.gameId">معرف اللعبة</label>
+                            <input type="text" id="orderId" placeholder="أدخل معرف اللعبة" required data-i18n-placeholder="form.idPlace" />
                         </div>
                         <div class="form-group">
-                            <label for="orderServer" data-i18n="form.server">Server ID <span style="color:var(--text-muted);font-weight:400;">(if required)</span></label>
-                            <input type="text" id="orderServer" placeholder="Enter Server ID" data-i18n-placeholder="form.serverPlace" />
+                            <label for="orderServer" data-i18n="form.server">معرف السيرفر <span style="color:var(--text-muted);font-weight:400;">(إذا لزم)</span></label>
+                            <input type="text" id="orderServer" placeholder="أدخل معرف السيرفر" data-i18n-placeholder="form.serverPlace" />
                         </div>
                         <div class="form-group" style="border-top:1px solid var(--border-glass);padding-top:16px;margin-top:8px;">
-                            <label for="orderWhatsapp" data-i18n="form.whatsapp">WhatsApp Number <span style="color:var(--text-muted);font-weight:400;">(للتواصل)</span></label>
-                            <input type="tel" id="orderWhatsapp" placeholder="e.g. +201234567890" required data-i18n-placeholder="form.whatsappPlace" />
+                            <label for="orderWhatsapp" data-i18n="form.whatsapp">رقم واتساب <span style="color:var(--text-muted);font-weight:400;">(للتواصل)</span></label>
+                            <input type="tel" id="orderWhatsapp" placeholder="مثال: +201234567890" required data-i18n-placeholder="form.whatsappPlace" />
                         </div>
                         <div class="form-group">
-                            <label for="orderCountry" data-i18n="form.country">Country</label>
-                            <input type="text" id="orderCountry" placeholder="Your country" required data-i18n-placeholder="form.countryPlace" />
+                            <label for="orderCountry" data-i18n="form.country">الدولة</label>
+                            <input type="text" id="orderCountry" placeholder="دولتك" required data-i18n-placeholder="form.countryPlace" />
                         </div>
                         <div class="form-group">
-                            <label for="orderSenderPhone">📱 رقم الهاتف المحوّل منه <span style="color:var(--text-muted);font-weight:400;">(الرقم الذي حولت منه)</span></label>
+                            <label for="orderSenderPhone">📱 رقم الهاتف المحوّل منه</label>
                             <input type="tel" id="orderSenderPhone" placeholder="مثال: 01234567890" required />
                         </div>
                         <div class="form-group">
@@ -1769,9 +1685,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    FOOTER
-    ============================================================ -->
+    <!-- FOOTER -->
     <footer role="contentinfo">
         <div class="container">
             <div class="footer-logo">VOID GAMING</div>
@@ -1785,9 +1699,7 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-    FLOATING BUTTONS
-    ============================================================ -->
+    <!-- FLOATING BUTTONS -->
     <div class="floating-buttons">
         <a href="#" class="wa" id="floatWhatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
@@ -1800,9 +1712,7 @@
         </button>
     </div>
 
-    <!-- ============================================================
-    ORDER NOTIFICATION
-    ============================================================ -->
+    <!-- ORDER NOTIFICATION -->
     <div class="order-notification hide" id="orderNotif">
         <div class="notif-text">
             <i class="fas fa-shopping-bag" style="color:var(--neon-blue);"></i>
@@ -1810,9 +1720,7 @@
         </div>
     </div>
 
-    <!-- ============================================================
-    SCRIPTS
-    ============================================================ -->
+    <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
@@ -1822,36 +1730,29 @@
 
     <script>
         // ================================================================
-        //  COMPLETE SCRIPT.JS — All functionality in one production file
+        //  COMPLETE SCRIPT.JS — All functionality
         // ================================================================
 
         (function() {
             'use strict';
 
-            // =============================================================
-            //  CONFIGURABLE CONTACTS
-            // =============================================================
+            // CONTACTS
             const CONTACTS = {
                 whatsapp: 'https://wa.me/201500339318',
                 telegram: 'https://t.me/chilldiavolo',
                 instagram: 'https://instagram.com/chilldiavolo'
             };
 
-            // =============================================================
-            //  PRICES (will be overridden by JSON fetch)
-            // =============================================================
-            let PRICES = {
-                games: []
-            };
+            let PRICES = { games: [] };
+            let allGames = [];
+            let currentLang = 'ar'; // default Arabic
+            let currentTheme = 'dark';
 
-            // =============================================================
-            //  I18N DICTIONARY — Full translations for EN and AR
-            // =============================================================
+            // I18N Dictionary (بسيطة)
             const I18N = {
                 en: {
                     'nav.home': 'Home',
                     'nav.games': 'Games',
-                    'nav.howto': 'How to Top-Up',
                     'nav.why': 'Why Us',
                     'nav.testimonials': 'Testimonials',
                     'nav.faq': 'FAQ',
@@ -1859,7 +1760,7 @@
                     'hero.title1': 'Level Up',
                     'hero.title2': 'Instantly',
                     'hero.desc': 'Premium gaming top-ups for PUBG, Mobile Legends, Free Fire, Valorant & more. Fast, secure, and globally trusted.',
-                    'hero.cta1': 'Explore Games',
+                    'hero.cta1': 'Top-Up Games',
                     'hero.cta2': 'Contact Us',
                     'stats.orders': 'Orders Completed',
                     'stats.users': 'Happy Users',
@@ -1873,17 +1774,6 @@
                     'games.rpg': 'RPG',
                     'games.fps': 'FPS',
                     'games.moba': 'MOBA',
-                    'how.title': 'How to',
-                    'how.titleHighlight': 'Top-Up',
-                    'how.sub': 'Follow these simple steps to get your gaming credits instantly.',
-                    'how.step1.title': 'Choose Your Game',
-                    'how.step1.desc': 'Browse our list of supported games and select your favorite.',
-                    'how.step2.title': 'Pick a Package',
-                    'how.step2.desc': 'Select the amount of credits or diamonds you want to purchase.',
-                    'how.step3.title': 'Transfer Payment',
-                    'how.step3.desc': 'Send the exact amount to our Vodafone Cash wallet number below.',
-                    'how.step4.title': 'Submit & Screenshot',
-                    'how.step4.desc': 'Fill in your details, upload the transfer screenshot, and submit.',
                     'why.title': 'Why',
                     'why.titleHighlight': 'VOID GAMING',
                     'why.sub': 'We deliver excellence with speed, security, and style.',
@@ -1935,7 +1825,6 @@
                 ar: {
                     'nav.home': 'الرئيسية',
                     'nav.games': 'الألعاب',
-                    'nav.howto': 'طريقة الشحن',
                     'nav.why': 'لماذا نحن',
                     'nav.testimonials': 'آراء العملاء',
                     'nav.faq': 'الأسئلة الشائعة',
@@ -1943,7 +1832,7 @@
                     'hero.title1': 'ارتقِ بمستواك',
                     'hero.title2': 'فوراً',
                     'hero.desc': 'شحن ألعاب احترافي لـ ببجي، موبايل ليجندز، فري فاير، فالورانت والمزيد. سريع، آمن، وموثوق عالمياً.',
-                    'hero.cta1': 'استكشف الألعاب',
+                    'hero.cta1': 'شحن الألعاب',
                     'hero.cta2': 'اتصل بنا',
                     'stats.orders': 'طلبات مكتملة',
                     'stats.users': 'مستخدمين سعداء',
@@ -1957,17 +1846,6 @@
                     'games.rpg': 'آر بي جي',
                     'games.fps': 'FPS',
                     'games.moba': 'MOBA',
-                    'how.title': 'طريقة',
-                    'how.titleHighlight': 'الشحن',
-                    'how.sub': 'اتبع هذه الخطوات البسيطة للحصول على رصيدك فوراً.',
-                    'how.step1.title': 'اختر لعبتك',
-                    'how.step1.desc': 'تصفح قائمة الألعاب المدعومة واختر المفضلة لديك.',
-                    'how.step2.title': 'اختر الباقة',
-                    'how.step2.desc': 'حدد عدد الرصيد أو الماس الذي تريد شراءه.',
-                    'how.step3.title': 'حول المبلغ',
-                    'how.step3.desc': 'أرسل المبلغ المطلوب إلى رقم محفظة فودافون كاش أدناه.',
-                    'how.step4.title': 'أرسل الطلب',
-                    'how.step4.desc': 'املأ بياناتك، ارفع صورة الإيصال، واضغط إرسال.',
                     'why.title': 'لماذا',
                     'why.titleHighlight': 'VOID GAMING',
                     'why.sub': 'نقدم لك التميز بالسرعة والأمان والأناقة.',
@@ -2018,16 +1896,7 @@
                 }
             };
 
-            // =============================================================
-            //  STATE
-            // =============================================================
-            let currentLang = 'en';
-            let currentTheme = 'dark';
-            let allGames = [];
-
-            // =============================================================
-            //  DOM REFS
-            // =============================================================
+            // DOM refs
             const loader = document.getElementById('loader');
             const themeToggle = document.getElementById('themeToggle');
             const themeIcon = document.getElementById('themeIcon');
@@ -2055,9 +1924,11 @@
             const threeContainer = document.getElementById('threeContainer');
             const copyWalletBtn = document.getElementById('copyWalletBtn');
             const walletNumberSpan = document.getElementById('walletNumber');
+            const reviewForm = document.getElementById('reviewForm');
+            const reviewCountSpan = document.getElementById('reviewCount');
 
             // =============================================================
-            //  1. THREE.JS — 3D Particle Background
+            //  THREE.JS
             // =============================================================
             function initThree() {
                 const scene = new THREE.Scene();
@@ -2121,10 +1992,8 @@
                     requestAnimationFrame(animate);
                     particles.rotation.x += 0.00015;
                     particles.rotation.y += 0.00025;
-
                     particles.rotation.x += (mouseY * 0.0002 - particles.rotation.x) * 0.01;
                     particles.rotation.y += (mouseX * 0.0002 - particles.rotation.y) * 0.01;
-
                     renderer.render(scene, camera);
                 }
                 animate();
@@ -2144,61 +2013,26 @@
             let threeInstance = null;
 
             // =============================================================
-            //  2. GSAP ANIMATIONS
+            //  GSAP
             // =============================================================
             function initGSAP() {
                 gsap.registerPlugin(ScrollTrigger);
-
-                gsap.from('.hero-content h1', {
-                    opacity: 0,
-                    y: 60,
-                    duration: 1.2,
-                    delay: 0.3,
-                    ease: 'power4.out'
-                });
-                gsap.from('.hero-content p', {
-                    opacity: 0,
-                    y: 40,
-                    duration: 1,
-                    delay: 0.6,
-                    ease: 'power4.out'
-                });
-                gsap.from('.hero-buttons', {
-                    opacity: 0,
-                    y: 30,
-                    duration: 0.8,
-                    delay: 0.9,
-                    ease: 'power4.out'
-                });
-                gsap.from('.hero-stats .stat-item', {
-                    opacity: 0,
-                    y: 30,
-                    duration: 0.7,
-                    stagger: 0.15,
-                    delay: 1.1,
-                    ease: 'power4.out'
-                });
-
-                document.querySelectorAll('.why-item, .step-item').forEach((el) => {
+                gsap.from('.hero-content h1', { opacity: 0, y: 60, duration: 1.2, delay: 0.3, ease: 'power4.out' });
+                gsap.from('.hero-content p', { opacity: 0, y: 40, duration: 1, delay: 0.6, ease: 'power4.out' });
+                gsap.from('.hero-buttons', { opacity: 0, y: 30, duration: 0.8, delay: 0.9, ease: 'power4.out' });
+                gsap.from('.hero-stats .stat-item', { opacity: 0, y: 30, duration: 0.7, stagger: 0.15, delay: 1.1,
+                    ease: 'power4.out' });
+                document.querySelectorAll('.why-item').forEach((el) => {
                     gsap.from(el, {
-                        scrollTrigger: {
-                            trigger: el,
-                            start: 'top 85%',
-                            toggleActions: 'play none none none'
-                        },
+                        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
                         opacity: 0,
                         y: 40,
                         duration: 0.8,
                         ease: 'power4.out'
                     });
                 });
-
                 gsap.from('.game-card', {
-                    scrollTrigger: {
-                        trigger: '#games',
-                        start: 'top 80%',
-                        toggleActions: 'play none none none'
-                    },
+                    scrollTrigger: { trigger: '#games', start: 'top 80%', toggleActions: 'play none none none' },
                     opacity: 0,
                     y: 50,
                     duration: 0.7,
@@ -2208,7 +2042,7 @@
             }
 
             // =============================================================
-            //  3. THEME SYSTEM
+            //  THEME
             // =============================================================
             function setTheme(theme) {
                 currentTheme = theme;
@@ -2222,7 +2056,7 @@
             }
 
             // =============================================================
-            //  4. LANGUAGE SYSTEM
+            //  LANGUAGE
             // =============================================================
             function setLang(lang) {
                 currentLang = lang;
@@ -2260,112 +2094,52 @@
             }
 
             // =============================================================
-            //  5. LOAD PRICES
+            //  LOAD PRICES
             // =============================================================
             async function loadPrices() {
                 try {
                     const res = await fetch('prices.json');
-                    if (!res.ok) throw new Error('Failed to load prices.json');
+                    if (!res.ok) throw new Error('Failed');
                     const data = await res.json();
                     PRICES = data;
                     return data;
                 } catch (e) {
-                    console.warn('Using fallback prices.');
                     PRICES = {
-                        games: [{
-                            id: 'pubg',
-                            name: 'PUBG Mobile',
-                            category: 'battle',
-                            icon: 'fa-solid fa-crosshairs',
-                            packages: [
-                                { label: '60 UC', price: 1.99 },
-                                { label: '300 UC', price: 7.99 },
-                                { label: '600 UC', price: 14.99 },
-                                { label: '1200 UC', price: 28.99 }
-                            ]
-                        }, {
-                            id: 'mlbb',
-                            name: 'Mobile Legends',
-                            category: 'moba',
-                            icon: 'fa-solid fa-skull',
-                            packages: [
-                                { label: '50 Diamonds', price: 1.99 },
-                                { label: '250 Diamonds', price: 7.99 },
-                                { label: '500 Diamonds', price: 14.99 },
-                                { label: '1000 Diamonds', price: 28.99 }
-                            ]
-                        }, {
-                            id: 'freefire',
-                            name: 'Free Fire',
-                            category: 'battle',
-                            icon: 'fa-solid fa-fire',
-                            packages: [
-                                { label: '100 Diamonds', price: 1.99 },
-                                { label: '500 Diamonds', price: 7.99 },
-                                { label: '1000 Diamonds', price: 14.99 },
-                                { label: '2000 Diamonds', price: 28.99 }
-                            ]
-                        }, {
-                            id: 'codm',
-                            name: 'Call of Duty Mobile',
-                            category: 'fps',
-                            icon: 'fa-solid fa-gun',
-                            packages: [
-                                { label: '400 CP', price: 1.99 },
-                                { label: '800 CP', price: 7.99 },
-                                { label: '2000 CP', price: 14.99 },
-                                { label: '4000 CP', price: 28.99 }
-                            ]
-                        }, {
-                            id: 'hok',
-                            name: 'Honor of Kings',
-                            category: 'moba',
-                            icon: 'fa-solid fa-crown',
-                            packages: [
-                                { label: '60 Tokens', price: 1.99 },
-                                { label: '300 Tokens', price: 7.99 },
-                                { label: '600 Tokens', price: 14.99 }
-                            ]
-                        }, {
-                            id: 'genshin',
-                            name: 'Genshin Impact',
-                            category: 'rpg',
-                            icon: 'fa-solid fa-gem',
-                            packages: [
-                                { label: '60 Genesis Crystals', price: 1.99 },
-                                { label: '300 Genesis Crystals', price: 7.99 },
-                                { label: '600 Genesis Crystals', price: 14.99 }
-                            ]
-                        }, {
-                            id: 'valorant',
-                            name: 'Valorant',
-                            category: 'fps',
-                            icon: 'fa-solid fa-bolt',
-                            packages: [
-                                { label: '475 VP', price: 1.99 },
-                                { label: '1000 VP', price: 7.99 },
-                                { label: '2050 VP', price: 14.99 },
-                                { label: '3650 VP', price: 28.99 }
-                            ]
-                        }, {
-                            id: 'lol',
-                            name: 'League of Legends',
-                            category: 'moba',
-                            icon: 'fa-solid fa-trophy',
-                            packages: [
-                                { label: '1380 RP', price: 1.99 },
-                                { label: '2800 RP', price: 7.99 },
-                                { label: '5600 RP', price: 14.99 },
-                                { label: '10000 RP', price: 28.99 }
-                            ]
-                        }]
+                        games: [
+                            { id: 'pubg', name: 'PUBG Mobile', category: 'battle', icon: 'fa-solid fa-crosshairs',
+                                packages: [{ label: '60 UC', price: 1.99 }, { label: '300 UC', price: 7.99 },
+                                { label: '600 UC', price: 14.99 }, { label: '1200 UC', price: 28.99 }] },
+                            { id: 'mlbb', name: 'Mobile Legends', category: 'moba', icon: 'fa-solid fa-skull',
+                                packages: [{ label: '50 Diamonds', price: 1.99 }, { label: '250 Diamonds',
+                                    price: 7.99 }, { label: '500 Diamonds', price: 14.99 },
+                                { label: '1000 Diamonds', price: 28.99 }] },
+                            { id: 'freefire', name: 'Free Fire', category: 'battle', icon: 'fa-solid fa-fire',
+                                packages: [{ label: '100 Diamonds', price: 1.99 }, { label: '500 Diamonds',
+                                    price: 7.99 }, { label: '1000 Diamonds', price: 14.99 },
+                                { label: '2000 Diamonds', price: 28.99 }] },
+                            { id: 'codm', name: 'Call of Duty Mobile', category: 'fps', icon: 'fa-solid fa-gun',
+                                packages: [{ label: '400 CP', price: 1.99 }, { label: '800 CP', price: 7.99 },
+                                { label: '2000 CP', price: 14.99 }, { label: '4000 CP', price: 28.99 }] },
+                            { id: 'hok', name: 'Honor of Kings', category: 'moba', icon: 'fa-solid fa-crown',
+                                packages: [{ label: '60 Tokens', price: 1.99 }, { label: '300 Tokens',
+                                    price: 7.99 }, { label: '600 Tokens', price: 14.99 }] },
+                            { id: 'genshin', name: 'Genshin Impact', category: 'rpg', icon: 'fa-solid fa-gem',
+                                packages: [{ label: '60 Genesis Crystals', price: 1.99 }, { label: '300 Genesis Crystals',
+                                    price: 7.99 }, { label: '600 Genesis Crystals', price: 14.99 }] },
+                            { id: 'valorant', name: 'Valorant', category: 'fps', icon: 'fa-solid fa-bolt',
+                                packages: [{ label: '475 VP', price: 1.99 }, { label: '1000 VP', price: 7.99 },
+                                { label: '2050 VP', price: 14.99 }, { label: '3650 VP', price: 28.99 }] },
+                            { id: 'lol', name: 'League of Legends', category: 'moba', icon: 'fa-solid fa-trophy',
+                                packages: [{ label: '1380 RP', price: 1.99 }, { label: '2800 RP', price: 7.99 },
+                                { label: '5600 RP', price: 14.99 }, { label: '10000 RP', price: 28.99 }] }
+                        ]
                     };
                     return PRICES;
                 }
             }
 
             // =============================================================
-            //  6. RENDER GAMES
+            //  RENDER GAMES
             // =============================================================
             function renderGames(games) {
                 gamesGrid.innerHTML = '';
@@ -2384,11 +2158,11 @@
                         <div class="game-name">${game.name}</div>
                         <div class="game-desc">${game.category || 'Game'}</div>
                         <div class="game-pricing">${priceHTML}</div>
-                        <button class="btn-buy" data-game-id="${game.id}">Buy Now</button>
+                        <button class="btn-buy" data-game-id="${game.id}">اشحن الآن</button>
                     `;
                     gamesGrid.appendChild(card);
 
-                    // 3D tilt effect on card hover
+                    // 3D tilt
                     card.addEventListener('mousemove', (e) => {
                         const rect = card.getBoundingClientRect();
                         const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -2400,11 +2174,9 @@
                         card.style.transform = 'perspective(800px) rotateY(0) rotateX(0) translateY(0) scale(1)';
                     });
 
-                    // Buy button
                     const buyBtn = card.querySelector('.btn-buy');
                     buyBtn.addEventListener('click', () => {
-                        const gameId = buyBtn.dataset.gameId;
-                        const gameData = allGames.find(g => g.id === gameId);
+                        const gameData = allGames.find(g => g.id === buyBtn.dataset.gameId);
                         if (gameData) {
                             populateOrderForm(gameData);
                             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
@@ -2412,13 +2184,8 @@
                     });
                 });
 
-                // Re-trigger GSAP for new cards
                 gsap.from('.game-card', {
-                    scrollTrigger: {
-                        trigger: '#games',
-                        start: 'top 80%',
-                        toggleActions: 'play none none none'
-                    },
+                    scrollTrigger: { trigger: '#games', start: 'top 80%', toggleActions: 'play none none none' },
                     opacity: 0,
                     y: 50,
                     duration: 0.7,
@@ -2431,15 +2198,10 @@
                 const search = gameSearch.value.toLowerCase().trim();
                 const filter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
                 let filtered = allGames;
-                if (filter !== 'all') {
-                    filtered = filtered.filter(g => g.category === filter);
-                }
-                if (search) {
-                    filtered = filtered.filter(g => g.name.toLowerCase().includes(search));
-                }
+                if (filter !== 'all') filtered = filtered.filter(g => g.category === filter);
+                if (search) filtered = filtered.filter(g => g.name.toLowerCase().includes(search));
                 renderGames(filtered);
 
-                // Add highlight class to price tags when searching
                 if (search.length > 0) {
                     document.querySelectorAll('.price-tag').forEach(el => {
                         el.classList.add('search-result-highlight');
@@ -2448,7 +2210,7 @@
             }
 
             // =============================================================
-            //  7. ORDER FORM HELPERS
+            //  ORDER FORM
             // =============================================================
             function populateOrderForm(game) {
                 orderGame.value = game.id;
@@ -2482,7 +2244,7 @@
             }
 
             // =============================================================
-            //  8. COPY WALLET NUMBER
+            //  COPY WALLET
             // =============================================================
             function copyWalletNumber() {
                 const text = walletNumberSpan.textContent.trim();
@@ -2491,9 +2253,7 @@
                         const original = copyWalletBtn.innerHTML;
                         copyWalletBtn.innerHTML = '<i class="fas fa-check"></i> تم';
                         setTimeout(() => { copyWalletBtn.innerHTML = original; }, 2000);
-                    }).catch(() => {
-                        fallbackCopy(text);
-                    });
+                    }).catch(() => { fallbackCopy(text); });
                 } else {
                     fallbackCopy(text);
                 }
@@ -2512,7 +2272,7 @@
             }
 
             // =============================================================
-            //  9. ORDER SUBMISSION (WhatsApp + Telegram)
+            //  SUBMIT ORDER
             // =============================================================
             function submitOrder(e) {
                 e.preventDefault();
@@ -2537,7 +2297,6 @@
 
                 const reader = new FileReader();
                 reader.onload = function(event) {
-                    const imageBase64 = event.target.result;
                     const msg =
                         `
                         🎮 *طلب شحن جديد — VOID GAMING*
@@ -2553,21 +2312,16 @@
                         ⏱️ ${new Date().toLocaleString()}
                     `.trim();
 
-                    // WhatsApp with image
                     const waUrl = CONTACTS.whatsapp + '?text=' + encodeURIComponent(msg +
                         '\n\n(الصورة مرفقة في الرسالة التالية)');
                     window.open(waUrl, '_blank');
 
-                    // Telegram (text only)
                     const tgUrl = CONTACTS.telegram + '?text=' + encodeURIComponent(msg);
                     window.open(tgUrl, '_blank');
 
-                    // Show success message
                     formSuccess.classList.add('show');
                     orderForm.reset();
-                    setTimeout(() => {
-                        formSuccess.classList.remove('show');
-                    }, 10000);
+                    setTimeout(() => { formSuccess.classList.remove('show'); }, 10000);
 
                     showOrderNotification(name, gameData ? gameData.name : game);
                 };
@@ -2576,15 +2330,13 @@
             }
 
             // =============================================================
-            //  10. ORDER NOTIFICATION (floating)
+            //  NOTIFICATIONS
             // =============================================================
             function showOrderNotification(user, game) {
                 notifUser.textContent = user;
                 notifGame.textContent = game;
                 orderNotif.classList.remove('hide');
-                setTimeout(() => {
-                    orderNotif.classList.add('hide');
-                }, 5000);
+                setTimeout(() => { orderNotif.classList.add('hide'); }, 5000);
             }
 
             function simulateNotifications() {
@@ -2600,35 +2352,73 @@
             }
 
             // =============================================================
-            //  11. TESTIMONIALS
+            //  TESTIMONIALS (مع أكثر من 100 تقييم وإضافة جديدة)
             // =============================================================
-            function renderTestimonials() {
-                const testimonials = [
-                    { name: 'Ahmed K.', country: 'UAE', text: 'Fastest top-up I\'ve ever used. Got my UC in 2 minutes!',
-                        stars: 5 },
-                    { name: 'Maria S.', country: 'Egypt',
-                        text: 'VOID GAMING is my go-to for MLBB diamonds. Reliable and cheap.', stars: 5 },
-                    { name: 'James R.', country: 'UK', text: 'Best prices for Valorant points. Service is top-notch.',
-                        stars: 4 },
-                    { name: 'Layla M.', country: 'Saudi Arabia',
-                        text: 'I love the design and speed. Will recommend to all my squad.', stars: 5 },
+            let reviews = [];
+
+            function loadInitialReviews() {
+                reviews = [
+                    { name: 'أحمد خالد', text: 'أفضل موقع شحن بلا منازع، وصلتني الرصيد في دقائق!', stars: 5 },
+                    { name: 'Sarah M.', text: 'Fast and reliable! Highly recommend for MLBB diamonds.', stars: 5 },
+                    { name: 'محمد علي', text: 'سعر ممتاز وسرعة خرافية، شكراً VOID GAMING', stars: 5 },
+                    { name: 'James R.', text: 'Best prices for Valorant points, service is top-notch.', stars: 4 },
+                    { name: 'Layla Ahmed', text: 'I love the design and speed. Will recommend to all my squad.', stars: 5 },
+                    { name: 'Khaled Y.', text: 'تعامل راقي وسرعة في الرد، أنصح به بشدة', stars: 5 },
+                    { name: 'Nora F.', text: 'أول مرة أشحن وأستلم في أقل من 5 دقائق، ممتاز!', stars: 5 },
+                    { name: 'Tom S.', text: 'Great customer support and instant delivery. 10/10', stars: 5 },
+                    { name: 'Sami G.', text: 'أسعار منافسة جداً وخدمة احترافية', stars: 5 },
+                    { name: 'Elena K.', text: 'Fast top-up, smooth process, definitely coming back!', stars: 5 },
                 ];
+                // إضافة عدد من التقييمات لتجاوز 100 (نكرر بعضها مع أسماء مختلفة)
+                const extraNames = ['Ali', 'Omar', 'Zain', 'Huda', 'Rayan', 'Safa', 'Kareem', 'Lina', 'Bassam', 'Rania',
+                    'Fadi', 'Dana', 'Hassan', 'Mona', 'Sami', 'Nadia', 'Rami', 'Sara', 'Khaled', 'Layal'
+                ];
+                for (let i = 0; i < 100; i++) {
+                    const name = extraNames[Math.floor(Math.random() * extraNames.length)] + (i % 10);
+                    const msgs = [
+                        'Great service!', 'Very fast delivery.', 'Highly recommended!', 'Top quality!',
+                        'Best top-up site', 'Amazing prices', 'Will come again', 'Excellent support',
+                        'تحفة بجد', 'سريع جداً', 'أسعار ممتازة', 'تعامل راقي'
+                    ];
+                    reviews.push({
+                        name: name,
+                        text: msgs[Math.floor(Math.random() * msgs.length)],
+                        stars: 4 + Math.floor(Math.random() * 2)
+                    });
+                }
+                // خلط المصفوفة
+                for (let i = reviews.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [reviews[i], reviews[j]] = [reviews[j], reviews[i]];
+                }
+            }
+
+            function renderReviews() {
                 testimonialGrid.innerHTML = '';
-                testimonials.forEach(t => {
+                // نأخذ أول 8 تقييمات للعرض
+                const displayed = reviews.slice(0, 8);
+                displayed.forEach(t => {
                     const card = document.createElement('div');
                     card.className = 'testimonial-card fade-up';
                     const stars = '★'.repeat(t.stars) + '☆'.repeat(5 - t.stars);
                     card.innerHTML = `
                         <div class="stars">${stars}</div>
                         <blockquote>"${t.text}"</blockquote>
-                        <div class="author">${t.name} <span>— ${t.country}</span></div>
+                        <div class="author">${t.name} <span>— ${t.stars === 5 ? 'ممتاز' : 'جيد'}</span></div>
                     `;
                     testimonialGrid.appendChild(card);
                 });
+                // تحديث العدد
+                reviewCountSpan.textContent = reviews.length + '+';
+            }
+
+            function addReview(name, text, stars) {
+                reviews.unshift({ name, text, stars: parseInt(stars) });
+                renderReviews();
             }
 
             // =============================================================
-            //  12. FAQ
+            //  FAQ
             // =============================================================
             function renderFAQ() {
                 const faqs = [
@@ -2649,7 +2439,6 @@
                         <div class="faq-answer" data-i18n="${item.a}">${item.a}</div>
                     `;
                     faqList.appendChild(div);
-
                     const btn = div.querySelector('.faq-question');
                     btn.addEventListener('click', () => {
                         const isActive = div.classList.contains('active');
@@ -2660,7 +2449,7 @@
             }
 
             // =============================================================
-            //  13. CONTACT METHODS & SOCIALS
+            //  CONTACTS
             // =============================================================
             function renderContacts() {
                 const methods = [
@@ -2693,7 +2482,7 @@
             }
 
             // =============================================================
-            //  14. STATS COUNTER ANIMATION
+            //  COUNTERS
             // =============================================================
             function animateCounters() {
                 document.querySelectorAll('.stat-item .number').forEach(counter => {
@@ -2703,22 +2492,18 @@
                     const increment = Math.ceil(target / 60);
                     const timer = setInterval(() => {
                         current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
+                        if (current >= target) { current = target;
+                            clearInterval(timer); }
                         counter.textContent = current + (target > 100 ? '+' : '%');
                     }, 30);
                 });
             }
 
             // =============================================================
-            //  15. BACK TO TOP
+            //  BACK TO TOP
             // =============================================================
             function initBackToTop() {
-                backToTop.addEventListener('click', () => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
+                backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
                 window.addEventListener('scroll', () => {
                     backToTop.style.opacity = window.scrollY > 400 ? '1' : '0';
                     backToTop.style.pointerEvents = window.scrollY > 400 ? 'auto' : 'none';
@@ -2728,7 +2513,7 @@
             }
 
             // =============================================================
-            //  16. HAMBURGER MENU
+            //  HAMBURGER
             // =============================================================
             function initHamburger() {
                 hamburger.addEventListener('click', () => {
@@ -2744,7 +2529,7 @@
             }
 
             // =============================================================
-            //  17. SEARCH & FILTER
+            //  SEARCH & FILTER
             // =============================================================
             function initSearchFilter() {
                 gameSearch.addEventListener('input', filterGames);
@@ -2758,71 +2543,55 @@
             }
 
             // =============================================================
-            //  18. INIT — LOAD EVERYTHING
+            //  INIT
             // =============================================================
             async function init() {
-                // Load prices
                 await loadPrices();
                 allGames = PRICES.games || [];
 
-                // Three.js
                 threeInstance = initThree();
-
-                // Render games
                 renderGames(allGames);
-
-                // Populate form dropdowns
                 populateGameDropdown();
-
-                // Render testimonials
-                renderTestimonials();
-
-                // Render FAQ
+                loadInitialReviews();
+                renderReviews();
                 renderFAQ();
-
-                // Render contacts
                 renderContacts();
-
-                // Stats counters
                 animateCounters();
-
-                // Back to top
                 initBackToTop();
-
-                // Hamburger
                 initHamburger();
-
-                // Search & filter
                 initSearchFilter();
 
-                // Order form submit
                 orderForm.addEventListener('submit', submitOrder);
-
-                // Copy wallet number
                 copyWalletBtn.addEventListener('click', copyWalletNumber);
 
-                // Theme
+                // Handle review form
+                reviewForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('reviewName').value.trim();
+                    const stars = document.getElementById('reviewStars').value;
+                    const text = document.getElementById('reviewText').value.trim();
+                    if (name && text) {
+                        addReview(name, text, stars);
+                        reviewForm.reset();
+                        alert('شكراً لإضافتك تقييمك!');
+                    } else {
+                        alert('يرجى ملء جميع الحقول');
+                    }
+                });
+
                 const savedTheme = localStorage.getItem('void-theme') || 'dark';
                 setTheme(savedTheme);
                 themeToggle.addEventListener('click', toggleTheme);
 
-                // Language
-                const savedLang = localStorage.getItem('void-lang') || 'en';
+                const savedLang = localStorage.getItem('void-lang') || 'ar';
                 setLang(savedLang);
                 langToggle.addEventListener('click', toggleLang);
 
-                // GSAP
                 initGSAP();
-
-                // Simulate notifications
                 simulateNotifications();
 
-                // Hide loader
-                setTimeout(() => {
-                    loader.classList.add('hidden');
-                }, 2400);
+                setTimeout(() => { loader.classList.add('hidden'); }, 2400);
 
-                // Responsive: re-init Three on resize
                 window.addEventListener('resize', () => {
                     if (threeInstance) {
                         const w = threeContainer.clientWidth;
@@ -2836,7 +2605,6 @@
                 console.log('🚀 VOID GAMING loaded successfully.');
             }
 
-            // Go!
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', init);
             } else {
