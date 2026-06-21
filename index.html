@@ -1560,13 +1560,12 @@
         (function() {
             'use strict';
 
-            // ---- CONFIGURABLE CONTACTS ----
+            // ---- CONFIGURABLE CONTACTS (UPDATED) ----
             const CONTACTS = {
-                whatsapp: 'https://wa.me/201234567890',
-                telegram: 'https://t.me/voidgaming',
-                facebook: 'https://facebook.com/voidgaming',
-                instagram: 'https://instagram.com/voidgaming',
-                email: 'mailto:support@voidgaming.com'
+                whatsapp: 'https://wa.me/201500339318', // رقم واتساب جديد
+                telegram: 'https://t.me/chilldiavolo', // username تلجرام
+                instagram: 'https://instagram.com/chilldiavolo' // حساب انستجرام
+                // تم حذف الفيسبوك والإيميل
             };
 
             // ---- PRICES (will be overridden by JSON fetch) ----
@@ -1959,21 +1958,12 @@
                         }
                     }
                 });
-                // Placeholder i18n
                 document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                     const key = el.getAttribute('data-i18n-placeholder');
                     if (dict[key] !== undefined) {
                         el.placeholder = dict[key];
                     }
                 });
-                // Update order notif text
-                const notifText = document.querySelector('.order-notification .notif-text');
-                if (notifText) {
-                    const span = notifText.querySelector('span:last-child');
-                    if (span) {
-                        // We'll update dynamically via JS
-                    }
-                }
             }
 
             function toggleLang() {
@@ -2167,7 +2157,6 @@
             //  7. ORDER FORM
             // ============================================================
             function populateOrderForm(game) {
-                // Set game select
                 orderGame.value = game.id;
                 updatePackageOptions(game.id);
             }
@@ -2185,7 +2174,6 @@
                 }
             }
 
-            // Populate game dropdown in form
             function populateGameDropdown() {
                 orderGame.innerHTML = '<option value="">-- Select --</option>';
                 allGames.forEach(g => {
@@ -2237,7 +2225,7 @@
                 const waUrl = CONTACTS.whatsapp + '?text=' + encodeURIComponent(msg);
                 window.open(waUrl, '_blank');
 
-                // Telegram (bot)
+                // Telegram (bot) — optional, but we keep it for compatibility
                 const tgToken = 'YOUR_BOT_TOKEN'; // Replace with actual token
                 const tgChatId = 'YOUR_CHAT_ID'; // Replace with actual chat ID
                 if (tgToken !== 'YOUR_BOT_TOKEN') {
@@ -2275,7 +2263,6 @@
                 }, 5000);
             }
 
-            // Simulate random notifications
             function simulateNotifications() {
                 const names = ['Alex', 'Sara', 'Khalid', 'Liam', 'Zara', 'Omar', 'Maya', 'Ethan', 'Nora', 'Rayan'];
                 const games = allGames.map(g => g.name);
@@ -2348,15 +2335,14 @@
             }
 
             // ============================================================
-            //  12. CONTACT METHODS & SOCIALS
+            //  12. CONTACT METHODS & SOCIALS (UPDATED)
             // ============================================================
             function renderContacts() {
+                // Only WhatsApp, Telegram, Instagram
                 const methods = [
                     { icon: 'fab fa-whatsapp', label: 'WhatsApp', url: CONTACTS.whatsapp, color: '#25d366' },
                     { icon: 'fab fa-telegram-plane', label: 'Telegram', url: CONTACTS.telegram, color: '#0088cc' },
-                    { icon: 'fab fa-facebook', label: 'Facebook', url: CONTACTS.facebook, color: '#1877f2' },
                     { icon: 'fab fa-instagram', label: 'Instagram', url: CONTACTS.instagram, color: '#e4405f' },
-                    { icon: 'fas fa-envelope', label: 'Email', url: CONTACTS.email, color: '#ea4335' },
                 ];
                 contactMethods.innerHTML = '';
                 methods.forEach(m => {
@@ -2369,14 +2355,12 @@
                     contactMethods.appendChild(a);
                 });
 
-                // Footer socials
+                // Footer socials (same three)
                 footerSocials.innerHTML = '';
                 const socials = [
                     { icon: 'fab fa-whatsapp', url: CONTACTS.whatsapp },
                     { icon: 'fab fa-telegram-plane', url: CONTACTS.telegram },
-                    { icon: 'fab fa-facebook', url: CONTACTS.facebook },
                     { icon: 'fab fa-instagram', url: CONTACTS.instagram },
-                    { icon: 'fas fa-envelope', url: CONTACTS.email },
                 ];
                 socials.forEach(s => {
                     const a = document.createElement('a');
@@ -2441,7 +2425,6 @@
                     const open = navLinks.classList.toggle('open');
                     hamburger.setAttribute('aria-expanded', open);
                 });
-                // Close on link click (mobile)
                 navLinks.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
                         navLinks.classList.remove('open');
@@ -2487,7 +2470,7 @@
                 // Render FAQ
                 renderFAQ();
 
-                // Render contacts
+                // Render contacts (updated)
                 renderContacts();
 
                 // Stats counters
