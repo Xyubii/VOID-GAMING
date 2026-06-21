@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VOID GAMING | Premium Gaming Top-Ups</title>
+    <title>VOID GAMING | شحن الألعاب</title>
     <meta name="description" content="VOID GAMING is a premium gaming top-up platform offering PUBG Mobile, Mobile Legends, Free Fire, Valorant, and more with fast service and competitive pricing worldwide." />
     <meta name="theme-color" content="#050505" />
     
@@ -56,7 +56,6 @@
             --hero-overlay: rgba(5, 5, 5, 0.55);
             --faq-bg: rgba(255, 255, 255, 0.02);
             --payment-highlight: rgba(0, 212, 255, 0.12);
-            --step-bg: rgba(0, 212, 255, 0.05);
         }
 
         [data-theme="light"] {
@@ -74,7 +73,6 @@
             --hero-overlay: rgba(245, 243, 255, 0.3);
             --faq-bg: rgba(157, 78, 221, 0.04);
             --payment-highlight: rgba(0, 212, 255, 0.08);
-            --step-bg: rgba(0, 212, 255, 0.06);
         }
 
         *,
@@ -552,7 +550,7 @@
             color: var(--text-secondary);
         }
 
-        /* TESTIMONIALS (آراء عملائنا) */
+        /* TESTIMONIALS */
         #testimonials {
             background: var(--bg-secondary);
         }
@@ -839,7 +837,7 @@
             letter-spacing: 1px;
         }
         .payment-instruction .wallet-number {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 900;
             background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
             -webkit-background-clip: text;
@@ -852,7 +850,6 @@
             border-radius: 60px;
             background: rgba(0, 0, 0, 0.3);
             box-shadow: 0 0 30px var(--neon-blue-glow);
-            font-size: 2.2rem;
         }
         .payment-instruction .copy-btn {
             background: var(--bg-glass);
@@ -874,37 +871,31 @@
             margin: 8px 0 4px;
         }
 
-        .contact-form .btn-submit {
+        /* زر واتساب الجديد */
+        .btn-whatsapp-submit {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             border-radius: 60px;
             font-weight: 700;
-            font-size: 0.95rem;
-            background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+            font-size: 1rem;
+            background: #25d366;
             color: #fff;
             transition: var(--transition-smooth);
-            box-shadow: 0 0 30px var(--neon-blue-glow);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.3);
             border: none;
             margin-top: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
-        .contact-form .btn-submit:hover {
+        .btn-whatsapp-submit:hover {
             transform: scale(1.02);
-            box-shadow: 0 0 40px var(--neon-purple-glow);
+            box-shadow: 0 0 50px rgba(37, 211, 102, 0.5);
+            background: #20b85a;
         }
-        .form-success {
-            display: none;
-            padding: 16px;
-            border-radius: var(--radius-sm);
-            background: rgba(0, 212, 255, 0.08);
-            border: 1px solid var(--neon-blue);
-            color: var(--neon-blue);
-            font-weight: 600;
-            text-align: center;
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-        .form-success.show {
-            display: block;
+        .btn-whatsapp-submit i {
+            font-size: 1.2rem;
         }
 
         /* TRUST BADGES */
@@ -1082,9 +1073,6 @@
         }
         [dir="ltr"] .hero-buttons {
             flex-direction: row;
-        }
-        [dir="ltr"] .games-controls input {
-            text-align: left;
         }
         [dir="ltr"] .contact-grid {
             direction: ltr;
@@ -1348,7 +1336,7 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS (آراء عملائنا) -->
+    <!-- TESTIMONIALS -->
     <section id="testimonials" aria-label="Testimonials">
         <div class="container">
             <h2 class="section-title">
@@ -1427,7 +1415,7 @@
                             </button>
                         </div>
                         <p style="font-size:0.8rem;color:var(--text-muted);margin-top:6px;">
-                            بعد التحويل، أكمل البيانات أدناه وأرفق لقطة شاشة الإيصال.
+                            بعد التحويل، أكمل البيانات أدناه ثم اضغط زر واتساب لإرسال طلبك مع صورة الإيصال.
                         </p>
                     </div>
 
@@ -1439,13 +1427,13 @@
                         <div class="form-group">
                             <label for="orderGame">اختر اللعبة</label>
                             <select id="orderGame" required>
-                                <option value="">-- Select --</option>
+                                <option value="">-- اختر --</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="orderPackage">اختر الباقة</label>
                             <select id="orderPackage" required>
-                                <option value="">-- Select --</option>
+                                <option value="">-- اختر --</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -1456,30 +1444,14 @@
                             <label for="orderServer">معرف السيرفر <span style="color:var(--text-muted);font-weight:400;">(إذا لزم)</span></label>
                             <input type="text" id="orderServer" placeholder="أدخل معرف السيرفر" />
                         </div>
-                        <div class="form-group" style="border-top:1px solid var(--border-glass);padding-top:14px;margin-top:6px;">
-                            <label for="orderWhatsapp">رقم واتساب <span style="color:var(--text-muted);font-weight:400;">(للتواصل)</span></label>
-                            <input type="tel" id="orderWhatsapp" placeholder="مثال: +201234567890" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="orderCountry">الدولة</label>
-                            <input type="text" id="orderCountry" placeholder="دولتك" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="orderSenderPhone">📱 رقم الهاتف المحوّل منه</label>
-                            <input type="tel" id="orderSenderPhone" placeholder="مثال: 01234567890" required />
-                        </div>
-                        <div class="form-group">
-                            <label for="orderScreenshot">🖼️ صورة إيصال التحويل (لقطة الشاشة)</label>
-                            <input type="file" id="orderScreenshot" accept="image/*" required style="padding:6px 10px;" />
-                            <p style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">يرجى إرفاق صورة واضحة لإيصال التحويل</p>
-                        </div>
 
-                        <button type="submit" class="btn-submit">
-                            <i class="fas fa-paper-plane"></i> إرسال طلب الشحن
+                        <!-- زر واتساب الجديد بدلاً من زر الإرسال -->
+                        <button type="button" class="btn-whatsapp-submit" id="whatsappOrderBtn">
+                            <i class="fab fa-whatsapp"></i> إرسال عبر واتساب
                         </button>
-                        <div class="form-success" id="formSuccess">
-                            ✅ تم استلام طلبك! سنتواصل معك قريباً لإتمام العملية.
-                        </div>
+                        <p style="font-size:0.75rem;color:var(--text-muted);margin-top:8px;text-align:center;">
+                            سيتم فتح واتساب برسالة جاهزة تتضمن بياناتك وطلب إرفاق صورة الإيصال.
+                        </p>
                     </form>
                 </div>
             </div>
@@ -1709,10 +1681,8 @@
             const testimonialGrid = document.getElementById('testimonialGrid');
             const contactMethods = document.getElementById('contactMethods');
             const footerSocials = document.getElementById('footerSocials');
-            const orderForm = document.getElementById('orderFormElement');
             const orderGame = document.getElementById('orderGame');
             const orderPackage = document.getElementById('orderPackage');
-            const formSuccess = document.getElementById('formSuccess');
             const backToTop = document.getElementById('backToTop');
             const floatWhatsapp = document.getElementById('floatWhatsapp');
             const floatTelegram = document.getElementById('floatTelegram');
@@ -1724,6 +1694,7 @@
             const walletNumberSpan = document.getElementById('walletNumber');
             const reviewForm = document.getElementById('reviewForm');
             const reviewCountSpan = document.getElementById('reviewCount');
+            const whatsappBtn = document.getElementById('whatsappOrderBtn');
 
             // =============================================================
             //  THREE.JS
@@ -1929,16 +1900,11 @@
             }
 
             // =============================================================
-            //  ORDER FORM
+            //  ORDER FORM HELPERS
             // =============================================================
-            function populateOrderForm(game) {
-                orderGame.value = game.id;
-                updatePackageOptions(game.id);
-            }
-
             function updatePackageOptions(gameId) {
                 const game = allGames.find(g => g.id === gameId);
-                orderPackage.innerHTML = '<option value="">-- Select --</option>';
+                orderPackage.innerHTML = '<option value="">-- اختر --</option>';
                 if (game) {
                     game.packages.forEach((p, i) => {
                         const opt = document.createElement('option');
@@ -1950,7 +1916,7 @@
             }
 
             function populateGameDropdown() {
-                orderGame.innerHTML = '<option value="">-- Select --</option>';
+                orderGame.innerHTML = '<option value="">-- اختر --</option>';
                 allGames.forEach(g => {
                     const opt = document.createElement('option');
                     opt.value = g.id;
@@ -1991,61 +1957,48 @@
             }
 
             // =============================================================
-            //  SUBMIT ORDER
+            //  WHATSAPP ORDER (NEW)
             // =============================================================
-            function submitOrder(e) {
-                e.preventDefault();
-
+            function sendOrderViaWhatsApp() {
+                // جمع البيانات من النموذج
                 const name = document.getElementById('orderName').value.trim();
                 const game = orderGame.value;
                 const pkgIdx = orderPackage.value;
                 const gameId = document.getElementById('orderId').value.trim();
                 const server = document.getElementById('orderServer').value.trim();
-                const whatsapp = document.getElementById('orderWhatsapp').value.trim();
-                const country = document.getElementById('orderCountry').value.trim();
-                const senderPhone = document.getElementById('orderSenderPhone').value.trim();
-                const screenshotFile = document.getElementById('orderScreenshot').files[0];
 
-                if (!name || !game || pkgIdx === '' || !gameId || !whatsapp || !country || !senderPhone || !screenshotFile) {
-                    alert('يرجى ملء جميع الحقول المطلوبة بما في ذلك صورة الإيصال.');
+                // التحقق من الحقول المطلوبة
+                if (!name || !game || pkgIdx === '' || !gameId) {
+                    alert('يرجى ملء جميع الحقول المطلوبة: الاسم، اللعبة، الباقة، ومعرف اللعبة.');
                     return;
                 }
 
+                // جلب اسم اللعبة والباقة
                 const gameData = allGames.find(g => g.id === game);
+                const gameName = gameData ? gameData.name : 'غير معروف';
                 const pkg = gameData ? gameData.packages[parseInt(pkgIdx)] : null;
+                const pkgLabel = pkg ? pkg.label + ' — $' + pkg.price.toFixed(2) : 'غير معروف';
 
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const msg =
-                        `
-                        🎮 *طلب شحن جديد — VOID GAMING*
-                        👤 الاسم: ${name}
-                        🎯 اللعبة: ${gameData ? gameData.name : game}
-                        📦 الباقة: ${pkg ? pkg.label + ' — $' + pkg.price.toFixed(2) : 'N/A'}
-                        🆔 معرف اللعبة: ${gameId}
-                        🖥️ السيرفر: ${server || 'N/A'}
-                        📱 واتساب: ${whatsapp}
-                        🌍 الدولة: ${country}
-                        💳 رقم المحوّل منه: ${senderPhone}
-                        📸 صورة الإيصال: [مرفقة]
-                        ⏱️ ${new Date().toLocaleString()}
-                    `.trim();
+                // رقم فودافون كاش
+                const walletNumber = '0150033918';
 
-                    const waUrl = CONTACTS.whatsapp + '?text=' + encodeURIComponent(msg +
-                        '\n\n(الصورة مرفقة في الرسالة التالية)');
-                    window.open(waUrl, '_blank');
+                // بناء الرسالة
+                const message =
+                    `مرحباً، أريد شحن لعبة *${gameName}*%0A` +
+                    `الباقة: *${pkgLabel}*%0A` +
+                    `معرف اللعبة: *${gameId}*%0A` +
+                    `${server ? 'معرف السيرفر: *' + server + '*%0A' : ''}` +
+                    `الاسم: *${name}*%0A%0A` +
+                    `📸 سأرفق لقطة شاشة للتحويل إلى رقم فودافون كاش *${walletNumber}*`;
 
-                    const tgUrl = CONTACTS.telegram + '?text=' + encodeURIComponent(msg);
-                    window.open(tgUrl, '_blank');
+                // رابط واتساب مع الرسالة
+                const waUrl = CONTACTS.whatsapp + '?text=' + message;
 
-                    formSuccess.classList.add('show');
-                    orderForm.reset();
-                    setTimeout(() => { formSuccess.classList.remove('show'); }, 10000);
+                // فتح واتساب
+                window.open(waUrl, '_blank');
 
-                    showOrderNotification(name, gameData ? gameData.name : game);
-                };
-
-                reader.readAsDataURL(screenshotFile);
+                // عرض إشعار
+                showOrderNotification(name, gameName);
             }
 
             // =============================================================
@@ -2071,7 +2024,7 @@
             }
 
             // =============================================================
-            //  TESTIMONIALS (آراء عملائنا مع أكثر من 100 تقييم)
+            //  TESTIMONIALS
             // =============================================================
             let reviews = [];
 
@@ -2260,8 +2213,11 @@
                 initBackToTop();
                 initHamburger();
 
-                orderForm.addEventListener('submit', submitOrder);
+                // Copy wallet
                 copyWalletBtn.addEventListener('click', copyWalletNumber);
+
+                // WhatsApp order button
+                whatsappBtn.addEventListener('click', sendOrderViaWhatsApp);
 
                 // Handle review form
                 reviewForm.addEventListener('submit', (e) => {
