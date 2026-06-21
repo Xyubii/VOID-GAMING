@@ -6,8 +6,6 @@
     <title>VOID GAMING | شحن الألعاب</title>
     <meta name="description" content="VOID GAMING is a premium gaming top-up platform offering PUBG Mobile, Mobile Legends, Free Fire, Valorant, and more with fast service and competitive pricing worldwide." />
     <meta name="theme-color" content="#050505" />
-    
-    <!-- Open Graph -->
     <meta property="og:title" content="VOID GAMING | Premium Gaming Top-Ups" />
     <meta property="og:description" content="Premium gaming top-ups for PUBG, Mobile Legends, Free Fire, Valorant & more. Fast, secure, and globally trusted." />
     <meta property="og:image" content="assets/IMG_3373.jpeg" />
@@ -20,17 +18,13 @@
     <meta name="twitter:title" content="VOID GAMING | Premium Gaming Top-Ups" />
     <meta name="twitter:description" content="Premium gaming top-ups for PUBG, Mobile Legends, Free Fire, Valorant & more." />
     <meta name="twitter:image" content="assets/IMG_3373.jpeg" />
-    
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='900' style='fill:%239D4EDD;'>V</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    
     <style>
-        /* ============================================================
-                   CSS VARIABLES & THEME SYSTEM
-                   ============================================================ */
+        /* ========== CSS ========== */
         :root {
             --bg-primary: #050505;
             --bg-secondary: #0a0a0f;
@@ -57,7 +51,6 @@
             --faq-bg: rgba(255, 255, 255, 0.02);
             --payment-highlight: rgba(0, 212, 255, 0.12);
         }
-
         [data-theme="light"] {
             --bg-primary: #f5f3ff;
             --bg-secondary: #ede9fe;
@@ -74,7 +67,6 @@
             --faq-bg: rgba(157, 78, 221, 0.04);
             --payment-highlight: rgba(0, 212, 255, 0.08);
         }
-
         *,
         *::before,
         *::after {
@@ -82,12 +74,10 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
         }
-
         body {
             font-family: var(--font-body);
             background: var(--bg-primary);
@@ -96,12 +86,10 @@
             overflow-x: hidden;
             line-height: 1.6;
         }
-
         ::selection {
             background: var(--neon-purple);
             color: #fff;
         }
-
         a {
             text-decoration: none;
             color: inherit;
@@ -116,7 +104,6 @@
         ul {
             list-style: none;
         }
-
         .container {
             max-width: 1280px;
             margin: 0 auto;
@@ -172,7 +159,6 @@
             border-radius: 10px;
             animation: loadBar 2.2s ease-in-out forwards;
         }
-
         @keyframes loadBar {
             0% {
                 width: 0%;
@@ -1516,8 +1502,7 @@
                 instagram: 'https://instagram.com/chilldiavolo'
             };
 
-            let PRICES = { games: [] };
-            let allGames = [];
+            let allGames = []; // سيتم تعبئتها من الـ JSON
             let currentLang = 'ar';
             let currentTheme = 'dark';
 
@@ -1525,7 +1510,6 @@
             const I18N = {
                 en: {
                     'nav.home': 'Home',
-                    'nav.games': 'Games',
                     'nav.why': 'Why Us',
                     'nav.testimonials': 'Testimonials',
                     'nav.faq': 'FAQ',
@@ -1538,15 +1522,6 @@
                     'stats.orders': 'Orders Completed',
                     'stats.users': 'Happy Users',
                     'stats.rating': 'Satisfaction %',
-                    'games.title': 'Top-Up',
-                    'games.titleHighlight': 'Games',
-                    'games.sub': 'Choose your game, pick a package, and level up instantly.',
-                    'games.search': 'Search games...',
-                    'games.all': 'All',
-                    'games.battle': 'Battle',
-                    'games.rpg': 'RPG',
-                    'games.fps': 'FPS',
-                    'games.moba': 'MOBA',
                     'why.title': 'Why',
                     'why.titleHighlight': 'VOID GAMING',
                     'why.sub': 'We deliver excellence with speed, security, and style.',
@@ -1577,12 +1552,7 @@
                     'form.idPlace': 'Enter your Game ID',
                     'form.server': 'Server ID (if required)',
                     'form.serverPlace': 'Enter Server ID',
-                    'form.whatsapp': 'WhatsApp Number',
-                    'form.whatsappPlace': 'e.g. +201234567890',
-                    'form.country': 'Country',
-                    'form.countryPlace': 'Your country',
                     'form.submit': 'Submit Order',
-                    'form.success': '✅ Your order has been received! We will contact you shortly to complete the process.',
                     'footer.slogan': 'Level Up Instantly',
                     'footer.copy': 'VOID GAMING. All rights reserved.',
                     'order.notif': 'just ordered',
@@ -1597,7 +1567,6 @@
                 },
                 ar: {
                     'nav.home': 'الرئيسية',
-                    'nav.games': 'الألعاب',
                     'nav.why': 'لماذا نحن',
                     'nav.testimonials': 'آراء عملائنا',
                     'nav.faq': 'الأسئلة الشائعة',
@@ -1610,15 +1579,6 @@
                     'stats.orders': 'طلبات مكتملة',
                     'stats.users': 'مستخدمين سعداء',
                     'stats.rating': 'نسبة الرضا',
-                    'games.title': 'شحن',
-                    'games.titleHighlight': 'الألعاب',
-                    'games.sub': 'اختر لعبتك، اختر الباقة، وارتقِ بمستواك فوراً.',
-                    'games.search': 'ابحث عن لعبة...',
-                    'games.all': 'الكل',
-                    'games.battle': 'قتال',
-                    'games.rpg': 'آر بي جي',
-                    'games.fps': 'FPS',
-                    'games.moba': 'MOBA',
                     'why.title': 'لماذا',
                     'why.titleHighlight': 'VOID GAMING',
                     'why.sub': 'نقدم لك التميز بالسرعة والأمان والأناقة.',
@@ -1649,12 +1609,7 @@
                     'form.idPlace': 'أدخل معرف اللعبة',
                     'form.server': 'معرف السيرفر (إذا لزم)',
                     'form.serverPlace': 'أدخل معرف السيرفر',
-                    'form.whatsapp': 'رقم واتساب',
-                    'form.whatsappPlace': 'مثال: +201234567890',
-                    'form.country': 'الدولة',
-                    'form.countryPlace': 'دولتك',
                     'form.submit': 'إرسال الطلب',
-                    'form.success': '✅ تم استلام طلبك! سنتواصل معك قريباً لإتمام العملية.',
                     'footer.slogan': 'ارتقِ بمستواك فوراً',
                     'footer.copy': 'VOID GAMING. جميع الحقوق محفوظة.',
                     'order.notif': 'طلب للتو',
@@ -1862,40 +1817,44 @@
                     const res = await fetch('prices.json');
                     if (!res.ok) throw new Error('Failed');
                     const data = await res.json();
-                    PRICES = data;
+                    allGames = data.games || [];
                     return data;
                 } catch (e) {
-                    PRICES = {
-                        games: [
-                            { id: 'pubg', name: 'PUBG Mobile', category: 'battle', icon: 'fa-solid fa-crosshairs',
-                                packages: [{ label: '60 UC', price: 1.99 }, { label: '300 UC', price: 7.99 },
-                                { label: '600 UC', price: 14.99 }, { label: '1200 UC', price: 28.99 }] },
-                            { id: 'mlbb', name: 'Mobile Legends', category: 'moba', icon: 'fa-solid fa-skull',
-                                packages: [{ label: '50 Diamonds', price: 1.99 }, { label: '250 Diamonds',
-                                    price: 7.99 }, { label: '500 Diamonds', price: 14.99 },
-                                { label: '1000 Diamonds', price: 28.99 }] },
-                            { id: 'freefire', name: 'Free Fire', category: 'battle', icon: 'fa-solid fa-fire',
-                                packages: [{ label: '100 Diamonds', price: 1.99 }, { label: '500 Diamonds',
-                                    price: 7.99 }, { label: '1000 Diamonds', price: 14.99 },
-                                { label: '2000 Diamonds', price: 28.99 }] },
-                            { id: 'codm', name: 'Call of Duty Mobile', category: 'fps', icon: 'fa-solid fa-gun',
-                                packages: [{ label: '400 CP', price: 1.99 }, { label: '800 CP', price: 7.99 },
-                                { label: '2000 CP', price: 14.99 }, { label: '4000 CP', price: 28.99 }] },
-                            { id: 'hok', name: 'Honor of Kings', category: 'moba', icon: 'fa-solid fa-crown',
-                                packages: [{ label: '60 Tokens', price: 1.99 }, { label: '300 Tokens',
-                                    price: 7.99 }, { label: '600 Tokens', price: 14.99 }] },
-                            { id: 'genshin', name: 'Genshin Impact', category: 'rpg', icon: 'fa-solid fa-gem',
-                                packages: [{ label: '60 Genesis Crystals', price: 1.99 }, { label: '300 Genesis Crystals',
-                                    price: 7.99 }, { label: '600 Genesis Crystals', price: 14.99 }] },
-                            { id: 'valorant', name: 'Valorant', category: 'fps', icon: 'fa-solid fa-bolt',
-                                packages: [{ label: '475 VP', price: 1.99 }, { label: '1000 VP', price: 7.99 },
-                                { label: '2050 VP', price: 14.99 }, { label: '3650 VP', price: 28.99 }] },
-                            { id: 'lol', name: 'League of Legends', category: 'moba', icon: 'fa-solid fa-trophy',
-                                packages: [{ label: '1380 RP', price: 1.99 }, { label: '2800 RP', price: 7.99 },
-                                { label: '5600 RP', price: 14.99 }, { label: '10000 RP', price: 28.99 }] }
-                        ]
-                    };
-                    return PRICES;
+                    // بيانات افتراضية
+                    allGames = [
+                        { id: 'pubg', name: 'PUBG Mobile', packages: [{ label: '60 UC', price: 1.99 },
+                            { label: '300 UC', price: 7.99 }, { label: '600 UC', price: 14.99 },
+                            { label: '1200 UC', price: 28.99 }
+                        ] },
+                        { id: 'mlbb', name: 'Mobile Legends', packages: [{ label: '50 Diamonds', price: 1.99 },
+                            { label: '250 Diamonds', price: 7.99 }, { label: '500 Diamonds', price: 14.99 },
+                            { label: '1000 Diamonds', price: 28.99 }
+                        ] },
+                        { id: 'freefire', name: 'Free Fire', packages: [{ label: '100 Diamonds', price: 1.99 },
+                            { label: '500 Diamonds', price: 7.99 }, { label: '1000 Diamonds', price: 14.99 },
+                            { label: '2000 Diamonds', price: 28.99 }
+                        ] },
+                        { id: 'codm', name: 'Call of Duty Mobile', packages: [{ label: '400 CP', price: 1.99 },
+                            { label: '800 CP', price: 7.99 }, { label: '2000 CP', price: 14.99 },
+                            { label: '4000 CP', price: 28.99 }
+                        ] },
+                        { id: 'hok', name: 'Honor of Kings', packages: [{ label: '60 Tokens', price: 1.99 },
+                            { label: '300 Tokens', price: 7.99 }, { label: '600 Tokens', price: 14.99 }
+                        ] },
+                        { id: 'genshin', name: 'Genshin Impact', packages: [{ label: '60 Genesis Crystals',
+                                price: 1.99 }, { label: '300 Genesis Crystals', price: 7.99 },
+                            { label: '600 Genesis Crystals', price: 14.99 }
+                        ] },
+                        { id: 'valorant', name: 'Valorant', packages: [{ label: '475 VP', price: 1.99 },
+                            { label: '1000 VP', price: 7.99 }, { label: '2050 VP', price: 14.99 },
+                            { label: '3650 VP', price: 28.99 }
+                        ] },
+                        { id: 'lol', name: 'League of Legends', packages: [{ label: '1380 RP', price: 1.99 },
+                            { label: '2800 RP', price: 7.99 }, { label: '5600 RP', price: 14.99 },
+                            { label: '10000 RP', price: 28.99 }
+                        ] }
+                    ];
+                    return { games: allGames };
                 }
             }
 
@@ -2201,7 +2160,6 @@
             // =============================================================
             async function init() {
                 await loadPrices();
-                allGames = PRICES.games || [];
 
                 threeInstance = initThree();
                 populateGameDropdown();
